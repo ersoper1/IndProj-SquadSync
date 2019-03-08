@@ -1,2 +1,3 @@
-Respository - the overall project story
-Commit - update/save the edit
+Respository - the overall project containing all folders and files
+Commit - update the files and verify any other requests for changes
+Branch - create a parallel project that runs alongside allowing for edits and changes to be made without editing the live project.
