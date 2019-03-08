@@ -1,3 +1,4 @@
 Respository - the overall project containing all folders and files
 Commit - update the files and verify any other requests for changes
 Branch - create a parallel project that runs alongside allowing for edits and changes to be made without editing the live project.
+Forking - take ownership of a project to avoid the need to create pull requests for others to verify.
