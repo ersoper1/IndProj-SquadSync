@@ -1,1 +1,2 @@
 Respository - the overall project story
+Commit - update/save the edit
