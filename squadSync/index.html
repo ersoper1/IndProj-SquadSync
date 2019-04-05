@@ -16,146 +16,658 @@
 
     <body>
 
-      <ons-navigator swipeable id="myNavigator" page="menu1.html"></ons-navigator>
+      <ons-navigator swipeable id="myNavigator" page="P-playerProfile.html"></ons-navigator>
 
-<!--page 1-->
-        <template id="menu1.html">
-          <ons-page id="menu1">
-            <!--<ons-toolbar>
-              <div class="left">
-                <ons-toolbar-button>
-                  <ons-icon icon="md-menu"></ons-icon>
-                </ons-toolbar-button>
-              </div>
-              <div class="center">Buttons</div>
-              <div class="right">
-                <ons-toolbar-button>Button</ons-toolbar-button>
-              </div>
-            </ons-toolbar>-->
+<!--page 1 player menu screen-->
+        <template id="P-playerMenu.html">
+            <ons-page id="playerMenu">
+                    <h3>Are you a...</h3>
+                    <h1>Player</h1>
 
-            <section id="menu-sect1">
-              <ons-button id="menu1-workouts" modifier="large"> 
-              </ons-button>
-            </section>
+                    <img class="typeId" src="graphics/placeholder.png" alt="playerIcon" height="200" width="200">
 
-            <section id="menu-sect2">
-              <ons-button id="menu1-nutrition" modifier="large">
-              </ons-button>
-            </section>
-          </ons-page>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p>
+                          <ons-input id="name" modifier="underbar" placeholder="Name" float></ons-input>
+                        </p>
+                        <p>
+                          <ons-input id="teamID" modifier="underbar" type="password" placeholder="Team ID" float></ons-input>
+                        </p>
+                        <p>
+                          <ons-input id="position" modifier="underbar" placeholder="Preferred Position" float></ons-input>
+                        </p>
+                        <p style="margin-top: 30px;">
+                          <ons-button onclick="login()">Sign in</ons-button>
+                        </p>
+                     </div>
+            
+            </ons-page>
         </template>
 
 
-<!--  page 2-->
-        <template id="page2.html">
-          <ons-page id="page2">
-            <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
-            </ons-toolbar>
+<!--  page 2 manager menu screen-->
+        <template id="M-managerMenu.html">
+          <ons-page id="Manager Menu">
+            <div class="content">
+                        <h3>Are you a...</h3>
+                        <h1>Manager</h1>
 
-            <p>title</p>
+                        <img class="typeId" src="graphics/placeholder.png" alt="playerIcon" height="200" width="200">
+
+                        <div style="text-align: center; margin-top: 30px;">
+                            <p>
+                              <ons-input id="name" modifier="underbar" placeholder="Name" float></ons-input>
+                            </p>
+                            <p>
+                              <ons-input id="teamName" modifier="underbar"  placeholder="Team Name" float></ons-input>
+                            </p>
+                            <p>
+                              <ons-input id="teamID" modifier="underbar" type="password" placeholder="Team ID" float></ons-input>
+                            </p>
+                            <p style="margin-top: 30px;">
+                              <ons-button onclick="login()">Sign in</ons-button>
+                            </p>
+                        </div>
+                    </div>
+
     
           </ons-page>
         </template>
 
-<!--  page 3-->
-        <template id="page3.html">
-          <ons-page id="page3">
+<!--  page 3 player player profile screen-->
+        <template id="P-playerProfile.html">
+          <ons-page id="Player Player Profile">
             <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
-            </ons-toolbar>
+                    <div class="left">
+                        <!--<ons-toolbar-button icon="md-face"></ons-toolbar-button>-->
+                    </div>
 
-            <p>title</p>
+                    <div class="center"><h3>Player Profile</h3></div>
+                    
+                    <div class="right">
+                        <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+                    
+                </ons-toolbar>
+              
+                <!--<ons-tabbar swipeable position="auto">
+                    <ons-tab page="P-playerProfile.html" img src="graphics/placeholder.png">
+                    </ons-tab>
+                    <ons-tab page="P-events.html" img src="graphics/placeholder.png">
+                    </ons-tab>
+                </ons-tabbar>-->
+
+                <ons-list-item>
+                    <div class="left">
+                        <img class="list-item__thumbnail" src="graphics/placeholder.png">
+                    </div>
+                    <div class="center">
+                        <span class="list-item__title">Notifications</span><span class="list-item__subtitle">You have 1 unread notification</span>
+                    </div>
+                </ons-list-item>
+
+                <ons-card modifier="material modifier2">
+                    <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+                </ons-card>
+              
+                <ons-list-header>Recent Availability</ons-list-header>
+                    
+                    <ons-list-item>
+                      <div class="left">
+                        <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                      </div>
+                      <div class="center">
+                        Event Name
+                      </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                      <div class="left">
+                        <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                      </div>
+                      <div class="center">
+                        Event Name
+                      </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                      <div class="left">
+                        <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                      </div>
+                      <div class="center">
+                        Event Name
+                      </div>
+                    </ons-list-item>
+              
+                    <ons-list-item>
+                      <div class="left">
+                        <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                      </div>
+                      <div class="center">
+                        Event Name
+                      </div>
+                    </ons-list-item>
+              
+                    <ons-list-item>
+                      <div class="left">
+                        <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                      </div>
+                      <div class="center">
+                        Event Name
+                      </div>
+                    </ons-list-item>
         
           </ons-page>
         </template>
         
-<!--  page 4-->
-        <template id="page4.html">
-          <ons-page id="page4">
+<!--  page 4 Player events page-->
+        <template id="P-events.html">
+          <ons-page id="playerEvents">
             <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
+                    <div class="left">
+                        <!--<ons-toolbar-button icon="md-face"></ons-toolbar-button>-->
+                    </div>
+
+                    <div class="center"><h3>Events</h3></div>
+                    
+                    <div class="right">
+                        <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+                    
             </ons-toolbar>
+              
+            <!--<ons-tabbar swipeable position="auto">
+                <ons-tab page="P-playerProfile.html" img src="graphics/placeholder.png">
+                </ons-tab>
+                <ons-tab page="P-events.html" img src="graphics/placeholder.png">
+                </ons-tab>
+            </ons-tabbar>-->
 
-            <p>title</p>
-          </ons-page>
-        </template>
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
 
-<!--  page 5-->
-        <template id="page5.html">
-          <ons-page id="page5">
-            <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
-            </ons-toolbar>
-
-            <p>title</p>
-          </ons-page>
-        </template>
-        
-<!--  page 6-->
-        <template id="page6.html">
-          <ons-page id="page6">
-            <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
-            </ons-toolbar>
-
-            <p>title</p>
-          </ons-page>
-        </template>
-        
-<!--  page 7-->
-        <template id="page7.html">
-          <ons-page id="page7">
-            <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
-            </ons-toolbar>
-
-            <p>title</p>
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+              
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+              
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
             
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
             
+          </ons-page>
+        </template>
+
+<!--  page 5 player notification page-->
+        <template id="P-notification.html">
+          <ons-page id="Player Notification">
+            <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button class="back"><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+
+                    <div class="center"><h3>Notifications</h3></div>
+                    
+                    <div class="right">
+                        <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+                    
+            </ons-toolbar>
+
+            <ons-list-item>
+                    <div class="left">
+                        <img class="list-item__thumbnail" src="graphics/placeholder.png">
+                    </div>
+                    <div class="center">
+                        <span class="list-item__title">Notifications</span><span class="list-item__subtitle">Notification Details</span>
+                    </div>
+            </ons-list-item>
+              
+            <ons-list-item>
+                    <div class="left">
+                        <img class="list-item__thumbnail" src="graphics/placeholder.png">
+                    </div>
+                    <div class="center">
+                        <span class="list-item__title">Notifications</span><span class="list-item__subtitle">Notification Details</span>
+                    </div>
+            </ons-list-item>
+              
+            <ons-list-item>
+                    <div class="left">
+                        <img class="list-item__thumbnail" src="graphics/placeholder.png">
+                    </div>
+                    <div class="center">
+                        <span class="list-item__title">Notifications</span><span class="list-item__subtitle">Notification Details</span>
+                    </div>
+            </ons-list-item>
+            
+          </ons-page>
+        </template>
+        
+<!--  page 6 manager player profile page-->
+        <template id="M-playerProfiles.html">
+          <ons-page id="Manager Player Profiles">
+            <ons-toolbar>
+                    <div class="left">
+                        <!--<ons-toolbar-button icon="md-face"></ons-toolbar-button>-->
+                    </div>
+
+                    <div class="center"><h3>Player Profiles</h3></div>
+                    
+                    <div class="right">
+                        <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+                    
+            </ons-toolbar>
+
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Player Name
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Primary Role</ons-list-header>
+                        <ons-list-item>1st Position</ons-list-item>
+                        <ons-list-item>2nd Position</ons-list-item>
+                        <ons-list-item>Secondary Role</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+            
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Player Name
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Primary Role</ons-list-header>
+                        <ons-list-item>1st Position</ons-list-item>
+                        <ons-list-item>2nd Position</ons-list-item>
+                        <ons-list-item>Secondary Role</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+            
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Player Name
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Primary Role</ons-list-header>
+                        <ons-list-item>1st Position</ons-list-item>
+                        <ons-list-item>2nd Position</ons-list-item>
+                        <ons-list-item>Secondary Role</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
               
           </ons-page>
         </template>
-
-<!--  page 8-->
-        <template id="page8.html">
-          <ons-page id="page8">
+        
+<!--  page 7 manager add event-->
+        <template id="M-addEvent.html">
+          <ons-page id="Manager Add Event">
             <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
+                    <div class="left">
+                        <!--<ons-toolbar-button icon="md-face"></ons-toolbar-button>-->
+                    </div>
+
+                    <div class="center"><h3>Create Event</h3></div>
+                    
+                    <div class="right">
+                        <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+                    
             </ons-toolbar>
 
-            <p>title</p>
+            <ons-list-item>
+                  <div class="left">
+                    <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                  </div>
+                  <div class="center">
+                    Type of Event
+                  </div>
+            </ons-list-item>
+              
+            <ons-list-item>
+                  <div class="left">
+                    <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                  </div>
+                  <div class="center">
+                    Name of Event
+                  </div>
+            </ons-list-item>
+              
+            <ons-list-item>
+                  <div class="left">
+                    <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                  </div>
+                  <div class="center">
+                    Date of Event
+                  </div>
+            </ons-list-item>
+            
+            <ons-list-item>
+                  <div class="left">
+                    <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                  </div>
+                  <div class="center">
+                    Time of Event
+                  </div>
+            </ons-list-item>
+              
+            <ons-list-item>
+                  <div class="left">
+                    <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                  </div>
+                  <div class="center">
+                    Location of Event
+                  </div>
+            </ons-list-item>
+            
+            <ons-list-item>
+                  <div class="left">
+                    <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                  </div>
+                  <div class="center">
+                    Repeat Event
+                  </div>
+            </ons-list-item>
+            
+            <ons-list-item>
+                  <div class="left">
+                    <ons-icon img src="graphics/placeholder.png" class="list-item__icon"></ons-icon>
+                  </div>
+                  <div class="center">
+                    Notification
+                  </div>
+            </ons-list-item>
+              
+            <ons-button>Create</ons-button>
+          </ons-page>
+        </template>
+
+<!--  page 8 Manager view events-->
+        <template id="M-events.html">
+          <ons-page id="Manager View Events">
+            <ons-toolbar>
+                    <div class="left">
+                        <!--<ons-toolbar-button icon="md-face"></ons-toolbar-button>-->
+                    </div>
+
+                    <div class="center"><h3>Events</h3></div>
+                    
+                    <div class="right">
+                        <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+                    
+            </ons-toolbar>
+
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+              
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+              
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+            
+            <ons-card modifier="material modifier2">
+                <img src="graphics/placeholder.png" alt="Onsen UI" style="width: 30%">
+                    <div class="title">
+                      Upcoming Event
+                    </div>
+                    <div class="content">
+                      <ons-list>
+                        <ons-list-header>Event Name</ons-list-header>
+                        <ons-list-item>Date and Time</ons-list-item>
+                        <ons-list-item>Location</ons-list-item>
+                        <ons-list-item>Availability</ons-list-item>
+                      </ons-list>
+                    </div>
+            </ons-card>
+        
           </ons-page>
         </template>
         
-<!--  page 9-->
-        <template id="page9.html">
-          <ons-page id="page9">
+<!--  page 9 Manager Availability View-->
+        <template id="M-availability.html">
+          <ons-page id="Manager Availability View">
             <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
+                <div class="left">
+                    <!--<ons-toolbar-button icon="md-face"></ons-toolbar-button>-->
+                </div>
+
+                <div class="center"><h3>Availability</h3></div>
+                    
+                <div class="right">
+                    <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                </div>                
             </ons-toolbar>
 
-            <p>title</p>
+            <ons-list-item class="list-item">
+                    <div class="left list-item__left"><img src="graphics/placeholder.png"></div>
+                    <div class="center list-item__center">Player Name - Position - Comments</div>
+                    <div class="right list-item__right"><img src="graphics/placeholder.png"></div>
+            </ons-list-item>
+              
+            <ons-list-item class="list-item">
+                    <div class="left list-item__left"><img src="graphics/placeholder.png"></div>
+                    <div class="center list-item__center">Player Name - Position - Comments</div>
+                    <div class="right list-item__right"><img src="graphics/placeholder.png"></div>
+            </ons-list-item>
+              
+            <ons-list-item class="list-item">
+                    <div class="left list-item__left"><img src="graphics/placeholder.png"></div>
+                    <div class="center list-item__center">Player Name - Position - Comments</div>
+                    <div class="right list-item__right"><img src="graphics/placeholder.png"></div>
+            </ons-list-item>
+              
+            <ons-list-item class="list-item">
+                    <div class="left list-item__left"><img src="graphics/placeholder.png"></div>
+                    <div class="center list-item__center">Player Name - Position - Comments</div>
+                    <div class="right list-item__right"><img src="graphics/placeholder.png"></div>
+            </ons-list-item>
+              
+            <ons-list-item class="list-item">
+                    <div class="left list-item__left"><img src="graphics/placeholder.png"></div>
+                    <div class="center list-item__center">Player Name - Position - Comments</div>
+                    <div class="right list-item__right"><img src="graphics/placeholder.png"></div>
+            </ons-list-item>
+              
           </ons-page>
         </template>
         
-<!--  page 10-->
-        <template id="page10.html">
-          <ons-page id="page10">
+<!--  page 10 manager Squad Selector-->
+        <template id="M-squadSelector.html">
+          <ons-page id="Manager Squad Selector">
             <ons-toolbar>
-              <div class="left"><ons-back-button id="back-button1">Page 1</ons-back-button></div>
-              <div class="center"></div>
+                <div class="left">
+                    <!--<ons-toolbar-button icon="md-face"></ons-toolbar-button>-->
+                </div>
+
+                <div class="center"><h3>Player Profile</h3></div>
+                    
+                <div class="right">
+                    <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                </div>                
             </ons-toolbar>
 
-            <p>title</p>
+          </ons-page>
+        </template>
+        
+<!--  page 11 manager Notifications-->
+        <template id="M-notifications.html">
+          <ons-page id="Manager Notification">
+            <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button class="back"><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+
+                    <div class="center"><h3>Notifications</h3></div>
+                    
+                    <div class="right">
+                        <ons-toolbar-button><img src="graphics/placeholder.png"></ons-toolbar-button>
+                    </div>
+                    
+            </ons-toolbar>
+
+            <ons-list-item>
+                    <div class="left">
+                        <img class="list-item__thumbnail" src="graphics/placeholder.png">
+                    </div>
+                    <div class="center">
+                        <span class="list-item__title">Notifications</span><span class="list-item__subtitle">Notification Details</span>
+                    </div>
+            </ons-list-item>
+              
+            <ons-list-item>
+                    <div class="left">
+                        <img class="list-item__thumbnail" src="graphics/placeholder.png">
+                    </div>
+                    <div class="center">
+                        <span class="list-item__title">Notifications</span><span class="list-item__subtitle">Notification Details</span>
+                    </div>
+            </ons-list-item>
+              
+            <ons-list-item>
+                    <div class="left">
+                        <img class="list-item__thumbnail" src="graphics/placeholder.png">
+                    </div>
+                    <div class="center">
+                        <span class="list-item__title">Notifications</span><span class="list-item__subtitle">Notification Details</span>
+                    </div>
+            </ons-list-item>
+            
           </ons-page>
         </template>
         
